@@ -20,6 +20,8 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Models
         }
 
         public System.Data.Entity.DbSet<CodeFest.NinjaFamily.FamilyTreeApp.Models.User> Users { get; set; }
+
+        public System.Data.Entity.DbSet<CodeFest.NinjaFamily.FamilyTreeApp.Models.Relationship> Relationships { get; set; }
     
     }
 }
