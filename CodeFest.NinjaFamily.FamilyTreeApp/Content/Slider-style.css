@@ -89,3 +89,58 @@
 .fader .pager_list li.active{
   opacity: 1;
 }
+
+#touch{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 200px;
+    z-index: 999;
+    margin-left: 100px;
+}
+
+
+/*Header bar*/
+
+.header-bar{
+    height: 10%;
+    min-width:100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    position:fixed;
+    top:0%;
+    left:0%;
+}
+
+
+.logo img{
+    height: 10%;   
+}
+
+.login {
+    position:absolute;
+    left: 90%;
+    top: 60%;
+    color: rgba(255, 255, 255, 1);
+
+}
+
+.login a{
+    color:white;
+}
+
+.login a:hover{
+    color: #899f39;
+}
+
+.login a:active{
+    color: #899f39;
+}
+
+#header-about{
+    padding-left: 20px;
+}
+
+#touch {
+    margin-left: 20%;
+}

@@ -1,54 +1,107 @@
 ﻿@{
     Layout = "~/Views/Shared/_LandingLayout.cshtml";
     ViewBag.Title = "Home Page";
-}
-<div id="slide-register">
-    <div id="Fader" class="fader">
-        <img class="slide" src="http://www.barrelny.com/wp-content/uploads/about-office-slide-pingpong2-800x500.jpg" />
-        <img class="slide" src="http://www.barrelny.com/wp-content/uploads/about-office-slide-bookcase-800x500.jpg" />
-        <img class="slide" src="http://www.barrelny.com/wp-content/uploads/about-office-slide-bikerack-800x500.jpg" />
-        <div class="fader_controls">
-            <div class="page prev" data-target="prev">&lsaquo;</div>
-            <div class="page next" data-target="next">&rsaquo;</div>
-            <ul class="pager_list"></ul>
-        </div>
-    </div>
-    <div class="container">
-        <h1>Urpinion</h1>
-        <h2>Create a new account</h2>
-        <form class="form" action="#">
-
-            <fieldset class="form-fieldset ui-input __first">
-                <input type="text" id="username" tabindex="0" />
-                <label for="username">
-                    <span data-text="Username">Username</span>
-                </label>
-            </fieldset>
-
-            <fieldset class="form-fieldset ui-input __second">
-                <input type="email" id="email" tabindex="0" />
-                <label for="email">
-                    <span data-text="E-mail Address">E-mail Address</span>
-                </label>
-            </fieldset>
-
-            <fieldset class="form-fieldset ui-input __third">
-                <input type="password" id="new-password" />
-                <label for="new-password">
-                    <span data-text="New Password">New Password</span>
-                </label>
-            </fieldset>
-
-            <fieldset class="form-fieldset ui-input __fourth">
-                <input type="password" id="repeat-new-password" />
-                <label for="repeat-new-password">
-                    <span data-text="Repeat New Password">Repeat New Password</span>
-                </label>
-            </fieldset>
-
-            <div class="form-footer">
-                <input type="submit" class="btn" value="Create Account" />
+    }
+    <section>
+        <div id="slide-register">
+            <div id="Fader" class="fader">
+                <img class="slide" src="~/Images/Slider/slide1.jpg" />
+                <img class="slide" src="http://www.barrelny.com/wp-content/uploads/about-office-slide-pingpong2-800x500.jpg" />
+                <img class="slide" src="http://www.barrelny.com/wp-content/uploads/about-office-slide-bookcase-800x500.jpg" />
+                <img class="slide" src="http://www.barrelny.com/wp-content/uploads/about-office-slide-bikerack-800x500.jpg" />
+                <div class="fader_controls">
+                    <div class="page prev" data-target="prev">&lsaquo;</div>
+                    <div class="page next" data-target="next">&rsaquo;</div>
+                    <ul class="pager_list"></ul>
+                </div>
             </div>
-        </form>
-    </div>
-</div>
+            <div id="touch">
+                <h1>Get in touch.</h1></br>
+                <h1>Stay in touch.</h1>
+            </div>
+            <div class="register-form">
+                <h2>Create a new account</h2>
+                <form class="form" action="#">
+
+                    <fieldset class="form-fieldset ui-input __second">
+                        <input type="email" id="email" tabindex="0" />
+                        <label for="email">
+                            <span data-text="E-mail Address">E-mail Address</span>
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset ui-input __third">
+                        <input type="password" id="new-password" />
+                        <label for="new-password">
+                            <span data-text="New Password">New Password</span>
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset ui-input __fourth">
+                        <input type="password" id="repeat-new-password" />
+                        <label for="repeat-new-password">
+                            <span data-text="Repeat New Password">Repeat New Password</span>
+                        </label>
+                    </fieldset>
+
+                    <div class="form-footer">
+                        <div class="submit">
+                            <a href="#">Create Account </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="features_wrapper">
+
+            <div id="animated-example" class="animated bounceInLeft">
+                <p>FIND YOUR FAMILY</p>
+            </div>
+            <div id="animated-example" class="animated bounceInRight">
+                <p>GET NOTIFIED WHEN THEY ARE IN YOUR TOWN</p>
+            </div>
+            <div id="animated-example" class="animated bounceInLeft">
+                <p>HEAR THEIR STORIES</p>
+            </div>
+            <div id="animated-example" class="animated bounceInRight">
+                <p>SHARE YOUR STORY</p>
+            </div>
+            <div id="animated-example" class="animated bounceInLeft">
+                <p>ORGINIZE AND ATEND FAMILY EVENT</p>
+            </div>
+            <div id="animated-example" class="animated bounceInRight">
+                <p>GROW YOUR TREE</p>
+            </div>
+
+    </section>
+    <section class="aboutUs">
+        <div class="profile_wrapper">
+            <div id="animated-example" class="animated bounceInLeft">
+                <div id="pic1" class="pic">
+                    <img src="~/Images/2.jpg" />
+                </div>
+            </div>
+            <div id="animated-example" class="animated bounceInRight">
+                <div id="pic2" class="pic">
+                    <img src="~/Images/1.jpg" />
+                </div>
+            </div>
+            <div id="animated-example" class="animated bounceInLeft">
+                <div id="pic3" class="pic">
+                    <img src="~/Images/3.jpg" />
+                                </div>
+            </div>
+            <div id="animated-example" class="animated bounceInRight">
+                <div id="pic4" class="pic">
+                    <img src="~/Images/4.jpg" />
+                </div>
+            </div>
+            <div id="animated-example" class="animated bounceInLeft">
+                <div id="pic5" class="pic">
+                    <img src="~/Images/5.jpg" />
+                </div>
+            </div>
+        </div>
+
+    </section>
