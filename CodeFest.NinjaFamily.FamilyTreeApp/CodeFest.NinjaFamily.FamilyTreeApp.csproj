@@ -194,10 +194,15 @@
     <Compile Include="Models\Relationship.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UsersContext.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\aboutAnimation.css" />
+    <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ProfilePage.css" />
@@ -212,9 +217,11 @@
     <Content Include="Images\3.jpg" />
     <Content Include="Images\4.jpg" />
     <Content Include="Images\5.jpg" />
+    <Content Include="Images\feature.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo_SQUARE.png" />
     <Content Include="Images\Slider\slide1.jpg" />
+    <Content Include="Scripts\animate.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -262,11 +269,6 @@
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Relationship\Create.cshtml" />
-    <Content Include="Views\Relationship\Delete.cshtml" />
-    <Content Include="Views\Relationship\Details.cshtml" />
-    <Content Include="Views\Relationship\Edit.cshtml" />
-    <Content Include="Views\Relationship\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
