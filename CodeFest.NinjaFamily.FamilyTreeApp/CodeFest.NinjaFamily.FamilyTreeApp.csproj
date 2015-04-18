@@ -219,12 +219,6 @@
     <Content Include="Images\5.jpg" />
     <Content Include="Images\feature.jpg" />
     <Content Include="Images\logo.png" />
-    <Content Include="Images\logo1.png" />
-    <Content Include="Images\logo60.png" />
-    <Content Include="Images\logowhite %281%29.png" />
-    <Content Include="Images\logowhite %282%29.png" />
-    <Content Include="Images\logowhite.png" />
-    <Content Include="Images\logowhite60.png" />
     <Content Include="Images\logo_SQUARE.png" />
     <Content Include="Images\Slider\slide1.jpg" />
     <Content Include="Scripts\animate.js" />
