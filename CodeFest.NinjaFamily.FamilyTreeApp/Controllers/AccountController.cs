@@ -83,7 +83,7 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Create", "User");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
