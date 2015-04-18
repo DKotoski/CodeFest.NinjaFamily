@@ -35,42 +35,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
    
-    <script src="~/Scripts/SliderJS.js"></script>
-<<<<<<< HEAD
-    <script src="~/Scripts/register.js"></script>
-=======
-<<<<<<< HEAD
-    <script src="~/Scripts/register.js"></script>
-    <script src="~/Scripts/animate.js"></script>
-    <script>
-    wow = new WOW(
-      {
-          animateClass: 'animated',
-          offset: 100,
-          callback: function (box) {
-              console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-          }
-      }
-    );
-    wow.init();
-   
-    </script>
 
-=======
-    @*<script src="~/Scripts/register.js"></script>*@
->>>>>>> origin/master
->>>>>>> origin/master
-    <script>
-       
-    $(document).ready(function(){
-        $('.pic').hover(function() {
-            $(this).addClass('transition');
-
-        }, function() {
-            $(this).removeClass('transition');
-        });
-    });
-    </script>
+    
   
     @RenderSection("scripts", required: false)
 </body>

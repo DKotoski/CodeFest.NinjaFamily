@@ -2,7 +2,6 @@
 @{
     Layout = "~/Views/Shared/_LandingLayout.cshtml";
     ViewBag.Title = "Home Page";
-<<<<<<< HEAD
 }
 <section>
     <div id="slide-register">
@@ -15,7 +14,6 @@
                 <div class="page prev" data-target="prev">&lsaquo;</div>
                 <div class="page next" data-target="next">&rsaquo;</div>
                 <ul class="pager_list"></ul>
-=======
     }
         <div id="slide-register">
             <div id="Fader" class="fader">
@@ -32,7 +30,6 @@
             <div id="touch">
                 <h1>Get in touch.</h1></br>
                 <h1>Stay in touch.</h1>
->>>>>>> origin/master
             </div>
         </div>
         <div id="touch">
@@ -68,7 +65,6 @@
                 </div>
             }
         </div>
-<<<<<<< HEAD
     </div>
 </section>
 <section class="features_wrapper">
@@ -123,10 +119,8 @@
     </div>
 
 </section>
-@section Scripts{
-    @Scripts.Render("~/bundles/jqueryval")
-}
-=======
+
+
   <div class="features_wrapper">
     <section class="section--purple wow slideInLeft" data-wow-delay="2s">
         <div id="animated-example" class="animated bounceInLeft">
@@ -197,4 +191,35 @@
         </div>
     </section>
 </div>
->>>>>>> origin/master
+
+   @section Scripts{
+   <script src="~/Scripts/register.js"></script>
+    <script src="~/Scripts/animate.js"></script>
+    <script>
+    wow = new WOW(
+      {
+          animateClass: 'animated',
+          offset: 100,
+          callback: function (box) {
+              console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+          }
+      }
+    );
+    wow.init();
+   
+    </script>
+
+    <script>
+       
+    $(document).ready(function(){
+        $('.pic').hover(function() {
+            $(this).addClass('transition');
+
+        }, function() {
+            $(this).removeClass('transition');
+        });
+    });
+       
+    </script>
+@Scripts.Render("~/bundles/jqueryval")
+}
