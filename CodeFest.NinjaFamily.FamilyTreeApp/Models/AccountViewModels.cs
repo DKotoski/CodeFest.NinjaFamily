@@ -5,7 +5,7 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [EmailAddress]
         public string UserName { get; set; }
     }
 
@@ -31,7 +31,7 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [EmailAddress]
         public string UserName { get; set; }
 
         [Required]
@@ -46,7 +46,8 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "e-mail")]
+        [DataType(DataType.EmailAddress)]
         public string UserName { get; set; }
 
         [Required]
