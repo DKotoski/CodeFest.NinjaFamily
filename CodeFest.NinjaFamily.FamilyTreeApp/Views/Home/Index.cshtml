@@ -1,4 +1,5 @@
-﻿@{
+﻿@model CodeFest.NinjaFamily.FamilyTreeApp.Models.RegisterViewModel
+@{
     Layout = "~/Views/Shared/_LandingLayout.cshtml";
     ViewBag.Title = "Home Page";
     }
@@ -21,36 +22,34 @@
             </div>
             <div class="register-form">
                 <h2>Create a new account</h2>
-                <form class="form" action="#">
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form"})) {
 
                     <fieldset class="form-fieldset ui-input __second">
-                        <input type="email" id="email" tabindex="0" />
+                        @Html.TextBoxFor(m => m.UserName)
                         <label for="email">
                             <span data-text="E-mail Address">E-mail Address</span>
                         </label>
                     </fieldset>
 
                     <fieldset class="form-fieldset ui-input __third">
-                        <input type="password" id="new-password" />
+                        @Html.PasswordFor(m => m.Password)
                         <label for="new-password">
                             <span data-text="New Password">New Password</span>
                         </label>
                     </fieldset>
 
                     <fieldset class="form-fieldset ui-input __fourth">
-                        <input type="password" id="repeat-new-password" />
+                        @Html.PasswordFor(m => m.ConfirmPassword)
                         <label for="repeat-new-password">
                             <span data-text="Repeat New Password">Repeat New Password</span>
                         </label>
                     </fieldset>
 
                     <div class="form-footer">
-                        <div class="submit">
-                            <a href="#">Create Account </a>
-                        </div>
+                        <input type="submit" value="CREATE ACCOUNT" class="btn btn-default" />
                     </div>
-                </form>
-            </div>
+            }
+                </div>
         </div>
     </section>
     <section class="features_wrapper">
