@@ -6,7 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     <link href="~/Content/registration-form.css" rel="stylesheet" />
-    <link href="~/Content/aboutAnimation.css" rel="stylesheet" />
+    @*<link href="~/Content/aboutAnimation.css" rel="stylesheet" />*@
+    <link href="~/Content/animate.css" rel="stylesheet" />
     <link href="~/Content/Slider-style.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 
@@ -55,6 +56,21 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/SliderJS.js"></script>
     <script src="~/Scripts/register.js"></script>
+    <script src="~/Scripts/animate.js"></script>
+    <script>
+    wow = new WOW(
+      {
+          animateClass: 'animated',
+          offset: 100,
+          callback: function (box) {
+              console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+          }
+      }
+    );
+    wow.init();
+   
+    </script>
+
     <script>
        
     $(document).ready(function(){

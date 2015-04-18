@@ -40,3 +40,30 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+section {
+  width: 100% !important;
+  /*margin: 60px 0;*/
+}
+.pic{
+	width:16%;
+	float:left;
+	margin-left:4%;
+	-webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+}
+.profile_wrapper{
+	width:100%;
+	padding-top:10%;
+	padding-bottom:10%;
+    height:40%;
+}
+.features_wrapper{
+	border-top:2px solid black;
+	width:100%;
+	margin:0 auto;
+	padding-top:10%;
+	padding-bottom:10%;
+	float:left;
+}
