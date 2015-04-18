@@ -25,7 +25,13 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                var currprev = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+                if (currprev == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                return View(currprev);
+                
             }
             User user = db.Users.Find(id);
             if (user == null)
@@ -45,14 +51,19 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="ID,Name,LastName,Image,Location,Birth,Death")] User user)
         {
             if (ModelState.IsValid)
             {
+                user.UserName = User.Identity.Name; 
                 db.Users.Add(user);
+                var currentUserName = User.Identity.Name;
+                var accDb = new ApplicationDbContext();
+                ApplicationUser currentUser = accDb.Users.FirstOrDefault(x => x.UserName == currentUserName);
+                currentUser.Owner = user.ID;
+                accDb.SaveChanges();
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details");
             }
 
             return View(user);
