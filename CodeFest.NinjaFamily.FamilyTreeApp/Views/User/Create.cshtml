@@ -38,7 +38,6 @@
 
     <div class="form-horizontal effect1" id="prof_form">
         <h4>User</h4>
-        <a href=""
         <hr />
         @Html.ValidationSummary(true)
        
@@ -58,18 +57,9 @@
                 @Html.ValidationMessageFor(model => model.LastName)
             </div>
         </div>
-<<<<<<< HEAD
-        <div class="form-group">
-            @using (Html.BeginForm("FileUpload", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
-            {
-                <label for="file">Upload Image:</label>
-                <input type="file" name="file" id="file" style="width: 100%;" />
-                <input type="submit" value="Upload" class="submit" />
-            }
-        </div>
-=======
+
         
->>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
+
         @*<div class="form-group">
                 @Html.LabelFor(model => model.Image, new { @class = "control-label col-md-2" })
                 <div class="col-md-10">

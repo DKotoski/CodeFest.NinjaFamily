@@ -31,14 +31,17 @@
 
         </footer>
     </div>
-<<<<<<< HEAD
+
+
+    
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    <script src="~/Scripts/SliderJS.js"></script>
-=======
    
->>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
+    <script src="~/Scripts/SliderJS.js"></script>
+    
+  
+    @RenderSection("scripts", required: false)
     <script src="~/Scripts/register.js"></script>
     <script src="~/Scripts/animate.js"></script>
     <script>
@@ -55,10 +58,6 @@
 
     </script>
 
-<<<<<<< HEAD
-    @*<script src="~/Scripts/register.js"></script>*@
-=======
->>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
     <script>
 
         $(document).ready(function () {
@@ -71,13 +70,5 @@
         });
 
     </script>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-   
-    <script src="~/Scripts/SliderJS.js"></script>
-    
-  
-    @RenderSection("scripts", required: false)
 </body>
 </html>

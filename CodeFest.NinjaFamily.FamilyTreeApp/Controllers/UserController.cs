@@ -158,8 +158,6 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Controllers
             }
             base.Dispose(disposing);
         }
-<<<<<<< HEAD
-=======
         public ActionResult ImageUpload()
         {
             return View();
@@ -213,6 +211,5 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Controllers
         //    return RedirectToAction("Details");
         //}
        
->>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
     }
 }
