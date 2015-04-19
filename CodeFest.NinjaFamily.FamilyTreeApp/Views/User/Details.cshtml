@@ -58,76 +58,357 @@
     </dl>
 </div>
 
-<button id="crap" >clickthis crap</button>
-
-@using (Html.BeginForm("CreateRelationship", "Relationship", new { invokerID = Model.ID, created = Model }))
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal hidden">
-        <h4>User</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserName)
-                @Html.ValidationMessageFor(model => model.UserName)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name)
-                @Html.ValidationMessageFor(model => model.Name)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastName)
-                @Html.ValidationMessageFor(model => model.LastName)
-            </div>
-        </div>
-
-        
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Location, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Location)
-                @Html.ValidationMessageFor(model => model.Location)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Birth, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Birth)
-                @Html.ValidationMessageFor(model => model.Birth)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Death, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Death)
-                @Html.ValidationMessageFor(model => model.Death)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+@{
+    Layout = null;
 }
 
-@section Scripts{
+<div>
+    <style>
+        #graph-container {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            height: 700px;
+            width:700px;
+        }
+    </style>
+    <div id="graph-container"></div>
+</div>
+
+    <script src="~/Scripts/sigmaSrc/sigma.core.js"></script>
+    <script src="~/Scripts/sigmaSrc/conrad.js"></script>
+    <script src="~/Scripts/sigmaSrc/utils/sigma.utils.js"></script>
+    <script src="~/Scripts/sigmaSrc/utils/sigma.polyfills.js"></script>
+    <script src="~/Scripts/sigmaSrc/sigma.settings.js"></script>
+    <script src="~/Scripts/sigmaSrc/classes/sigma.classes.dispatcher.js"></script>
+    <script src="~/Scripts/sigmaSrc/classes/sigma.classes.configurable.js"></script>
+    <script src="~/Scripts/sigmaSrc/classes/sigma.classes.graph.js"></script>
+    <script src="~/Scripts/sigmaSrc/classes/sigma.classes.camera.js"></script>
+    <script src="~/Scripts/sigmaSrc/classes/sigma.classes.quad.js"></script>
+    <script src="~/Scripts/sigmaSrc/classes/sigma.classes.edgequad.js"></script>
+    <script src="~/Scripts/sigmaSrc/captors/sigma.captors.mouse.js"></script>
+    <script src="~/Scripts/sigmaSrc/captors/sigma.captors.touch.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/sigma.renderers.canvas.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/sigma.renderers.webgl.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/sigma.renderers.svg.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/sigma.renderers.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/webgl/sigma.webgl.edges.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.labels.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.edges.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/svg/sigma.svg.utils.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/svg/sigma.svg.nodes.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/svg/sigma.svg.edges.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/svg/sigma.svg.edges.curve.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/svg/sigma.svg.labels.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/renderers/svg/sigma.svg.hovers.def.js"></script>
+    <script src="~/Scripts/sigmaSrc/middlewares/sigma.middlewares.rescale.js"></script>
+    <script src="~/Scripts/sigmaSrc/middlewares/sigma.middlewares.copy.js"></script>
+    <script src="~/Scripts/sigmaSrc/misc/sigma.misc.animation.js"></script>
+    <script src="~/Scripts/sigmaSrc/misc/sigma.misc.bindEvents.js"></script>
+    <script src="~/Scripts/sigmaSrc/misc/sigma.misc.bindDOMEvents.js"></script>
+    <script src="~/Scripts/sigmaSrc/misc/sigma.misc.drawHovers.js"></script>
+    <script>
+        Node = function (name, surrname, age) {
+            this.name = name;
+            this.surrname = surrname;
+            this.age = age;
+            this.image = "/Images/ImagesTree/"+name+".jpg";
+        }
+
+        var node1 = new Node("Jane", "Doe", 23);
+        var node2 = new Node("John", "Doe", 25);
+        var node3 = new Node("Jerry", "Doe", 50);
+        var node4 = new Node("Jenna", "Doe", 48);
+
+
+
+        sigma.utils.pkg('sigma.canvas.nodes');
+        sigma.canvas.nodes.image = (function () {
+            var _cache = {},
+                _loading = {},
+                _callbacks = {};
+
+            // Return the renderer itself:
+            var renderer = function (node, context, settings) {
+                var args = arguments,
+                    prefix = settings('prefix') || '',
+                    size = node[prefix + 'size'],
+                    color = node.color || settings('defaultNodeColor'),
+                    url = node.url;
+
+                if (_cache[url]) {
+                    context.save();
+
+                    // Draw the clipping disc:
+                    context.beginPath();
+                    context.arc(
+                      node[prefix + 'x'],
+                      node[prefix + 'y'],
+                      node[prefix + 'size'],
+                      0,
+                      Math.PI * 2,
+                      true
+                    );
+                    context.closePath();
+                    context.clip();
+
+                    // Draw the image
+                    context.drawImage(
+                      _cache[url],
+                      node[prefix + 'x'] - size,
+                      node[prefix + 'y'] - size,
+                      2 * size,
+                      2 * size
+                    );
+
+                    // Quit the "clipping mode":
+                    context.restore();
+
+                    // Draw the border:
+                    context.beginPath();
+                    context.arc(
+                      node[prefix + 'x'],
+                      node[prefix + 'y'],
+                      node[prefix + 'size'],
+                      0,
+                      Math.PI * 2,
+                      true
+                    );
+                    context.lineWidth = size / 5;
+                    context.strokeStyle = node.color || settings('defaultNodeColor');
+                    context.stroke();
+                } else {
+                    sigma.canvas.nodes.image.cache(url);
+                    sigma.canvas.nodes.def.apply(
+                      sigma.canvas.nodes,
+                      args
+                    );
+                }
+            };
+
+            // Let's add a public method to cache images, to make it possible to
+            // preload images before the initial rendering:
+            renderer.cache = function (url, callback) {
+                if (callback)
+                    _callbacks[url] = callback;
+
+                if (_loading[url])
+                    return;
+
+                var img = new Image();
+
+                img.onload = function () {
+                    _loading[url] = false;
+                    _cache[url] = img;
+
+                    if (_callbacks[url]) {
+                        _callbacks[url].call(this, img);
+                        delete _callbacks[url];
+                    }
+                };
+
+                _loading[url] = true;
+                img.src = url;
+            };
+
+            return renderer;
+        })();
+        // Now that's the renderer has been implemented, let's generate a graph
+        // to render:
+        var i,
+            s,
+            img,
+            N = 4,
+            E = 4,
+            g = {
+                nodes: [],
+                edges: []
+            },
+            urls = [
+            node1.image,
+            node2.image,
+            node3.image,
+            node4.image],
+            loaded = 0,
+            colors = [
+              '#617db4'
+            ];
+
+        g.nodes.push({
+            id: 'n' + 0,
+            label: node1.name + node1.surrname,
+            type: 'image',
+            url: urls[0],
+            x: 0.010,
+            y: 0.400,
+            size: 50,
+            color: colors[0]
+        });
+
+        g.nodes.push({
+            id: 'n' + 1,
+            label: node2.name + node2.surrname,
+            type: 'image',
+            url: urls[1],
+            x: 0.300,
+            y: 0.400,
+            size: 50,
+            color: colors[0]
+        });
+        g.nodes.push({
+            id: 'n' + 2,
+            label: node3.name + node3.surrname,
+            type: 'image',
+            url: urls[3],
+            x: 0.050,
+            y: 0.050,
+            size: 50,
+            color: colors[0]
+        });
+
+        g.nodes.push({
+            id: 'n' + 3,
+            label: node4.name + node4.surrname,
+            type: 'image',
+            url: urls[3],
+            x: 0.260,
+            y: 0.05,
+            size: 50,
+            color: colors[0]
+        });
+
+        g.nodes.push({
+            id: 'h0',
+            label: "",
+            type: 'def',
+            url: null,
+            x: 0.175,
+            y: 0.05,
+            size: 0.01,
+            color: colors[0]
+        });
+
+        g.nodes.push({
+            id: 'h1',
+            label: "",
+            type: 'def',
+            url: null,
+            x: 0.175,
+            y: 0.350,
+            size: 0.01,
+            color: colors[0]
+        });
+
+        g.nodes.push({
+            id: 'h2',
+            label: "",
+            type: 'def',
+            url: null,
+            x: 0.3,
+            y: 0.35,
+            size: 0.01,
+            color: colors[0]
+        });
+
+        g.nodes.push({
+            id: 'h3',
+            label: "",
+            type: 'def',
+            url: null,
+            x: 0.01,
+            y: 0.35,
+            size: 0.01,
+            color: colors[0]
+        });
+
+        g.edges.push({
+            id: 'e1',
+            source: "n2",
+            target: "h0",
+            size: 0.1
+        });
+
+        g.edges.push({
+            id: 'e2',
+            source: "n3",
+            target: "h0",
+            size: 0.1
+        });
+        g.edges.push({
+            id: 'e3',
+            source: "h1",
+            target: "h0",
+            size: 0.1
+        });
+        g.edges.push({
+            id: 'e4',
+            source: "h1",
+            target: "h2",
+            size: 0.1
+        });
+        g.edges.push({
+            id: 'e5',
+            source: "h1",
+            target: "h3",
+            size: 0.1
+        });
+        g.edges.push({
+            id: 'e6',
+            source: "n0",
+            target: "h3",
+            size: 0.1
+        });
+        g.edges.push({
+            id: 'e7',
+            source: "n1",
+            target: "h2",
+            size: 0.1
+        });
+
+        // Then, wait for all images to be loaded before instanciating sigma:
+        urls.forEach(function (url) {
+            sigma.canvas.nodes.image.cache(
+              url,
+              function () {
+                  if (++loaded === urls.length)
+                      // Instantiate sigma:
+                      s = new sigma({
+                          graph: g,
+                          renderer: {
+                              // IMPORTANT:
+                              // This works only with the canvas renderer, so the
+                              // renderer type set as "canvas" is necessary here.
+                              container: document.getElementById('graph-container'),
+                              type: 'canvas'
+                          },
+                          settings: {
+                              minNodeSize: 8,
+                              maxNodeSize: 16,
+                          }
+                      });
+              }
+            );
+        });
+    </script>
+
+
+@section scripts{
 <script>
     jQuery("#crap").on("click", function () {
         jQuery(".hidden").removeClass("hidden");
