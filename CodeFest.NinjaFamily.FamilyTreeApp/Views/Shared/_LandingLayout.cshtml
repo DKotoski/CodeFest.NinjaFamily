@@ -31,11 +31,40 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
+   
+    <script src="~/Scripts/register.js"></script>
+    <script src="~/Scripts/animate.js"></script>
+    <script>
+        wow = new WOW(
+          {
+              animateClass: 'animated',
+              offset: 100,
+              callback: function (box) {
+                  console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+              }
+          }
+        );
+        wow.init();
+
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+            $('.pic').hover(function () {
+                $(this).addClass('transition');
+
+            }, function () {
+                $(this).removeClass('transition');
+            });
+        });
+
+    </script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
    
-
+    <script src="~/Scripts/SliderJS.js"></script>
     
   
     @RenderSection("scripts", required: false)
