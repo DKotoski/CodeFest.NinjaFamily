@@ -106,3 +106,13 @@ footer{
 .footer-div ul{
     list-style: none;
 }
+
+.footer-logo{
+    width:35%;
+}
+.footer-logo img{
+    width:100%;
+}
+.copy{
+    font-size: 80%;
+}

@@ -3,45 +3,50 @@
 @{
     ViewBag.Title = "Log in";
 }
-
+@section CSS{
+    <link href="~/Content/Login.css" rel="stylesheet" />
+}
 <h2>@ViewBag.Title.</h2>
 <div class="row">
+    <section class="subscription">
+        <img src="~/Images/slika drvo.png"></section>
     <section>
         <div class="register-form">
-            <h2>Use an account to sign in!</h2>
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form" }))
-            {
-                @Html.AntiForgeryToken()
+            <h1 class="reg">sign in!</h1>
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form" }))
+                {
+                    @Html.AntiForgeryToken()
 
-                @Html.ValidationSummary(true)
-                <fieldset class="form-fieldset ui-input __first">
+                    @Html.ValidationSummary(true)
+                    <fieldset class="form-fieldset ui-input __first">
                         @Html.TextBoxFor(m => m.UserName)
                         <label for="UserName">
                             <span data-text="UserName">UserName</span>
                         </label>
-                </fieldset>
-                <fieldset class="form-fieldset ui-input __second">
-                    @Html.PasswordFor(m => m.Password)
-                    <label for="Password">
-                        <span data-text="Password">Password</span>
-                    </label>
-                </fieldset>
-                <fieldset class="form-fieldset ui-input __third">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            <label for="Remember">
-                                <span data-text="remember">Remember me!</span>
-                            </label>
-                </fieldset>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </fieldset>
+                    <fieldset class="form-fieldset ui-input __second">
+                        @Html.PasswordFor(m => m.Password)
+                        <label for="Password">
+                            <span data-text="Password">Password</span>
+                        </label>
+                    </fieldset>
+                    <fieldset style="color: rgba(255, 255, 255, 1); font-style:normal;">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        <label for="Remember">
+                            <span data-text="remember">Remember me!</span>
+                        </label>
+                    </fieldset>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Log in" class="btn btn-default" />
+                        </div>
                     </div>
-                </div>
-                <p>
-                    <h2>@Html.ActionLink("Register", "Register") if you don't have a local account.</h2>
-                </p>
-            }
-        </div>
+                    <br />
+                    <p style="color:white; font-size: 70%;">
+                        Don't have an account yet! @Html.ActionLink("Register", "Register")
+                    </p>
+                }
+</div>
     </section>    
 </div>
 @section Scripts {

@@ -1,0 +1,8 @@
+﻿.subscription{
+    position: absolute;
+    top: 15%;
+    left:0%;
+    width: 55% !important;
+    padding-left: 5%;
+}
+.subscription img{width: 100%;}
