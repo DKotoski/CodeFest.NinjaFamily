@@ -220,7 +220,10 @@
     <Content Include="Images\4.jpg" />
     <Content Include="Images\5.jpg" />
     <Content Include="Images\darko.png" />
+    <Content Include="Images\fb.png" />
+    <Content Include="Images\feat.png" />
     <Content Include="Images\feature.jpg" />
+    <Content Include="Images\goog.png" />
     <Content Include="Images\ivana.png" />
     <Content Include="Images\jordan.png" />
     <Content Include="Images\kristijan.png" />
@@ -233,7 +236,10 @@
     <Content Include="Images\logowhite.png" />
     <Content Include="Images\logowhite60.png" />
     <Content Include="Images\logo_SQUARE.png" />
+    <Content Include="Images\pic3.jpg" />
+    <Content Include="Images\pic4.png" />
     <Content Include="Images\Slider\slide1.jpg" />
+    <Content Include="Images\tw.png" />
     <Content Include="Images\Uploaded\back.jpg" />
     <Content Include="Scripts\animate.js" />
     <Content Include="Scripts\bootstrap.js" />

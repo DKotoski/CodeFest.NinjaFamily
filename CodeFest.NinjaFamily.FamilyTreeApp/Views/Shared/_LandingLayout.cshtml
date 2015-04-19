@@ -19,7 +19,7 @@
             <img src="~/Images/logo.png" />
         </div>
         <div class="login">
-            <a href="~/Account/Login" style="text-decoration:none;color:#ffffff; font-size:100%;font-weight: 100; margin-top:10%;">LOG IN</a>
+            <a href="~/Account/Login" style="text-decoration:none;color:#ffffff; font-size:70%;font-weight: 100; margin-top:10%;">LOG IN</a>
 
         </div>
     </div>
@@ -28,7 +28,33 @@
         @RenderBody()
         
         <footer>
-
+            <div id="pre-footer">
+                <div class="footer-div">
+                    <img src="~/Images/logo.png" />
+                    <br />
+                    &copy; @DateTime.Now.Year - Family Tree
+                </div>
+                <div class="footer-div">
+                    <ul>
+                        <li>
+                            About Us
+                        </li>
+                        <li>
+                            Privacy Policy
+                        </li>
+                        <li>
+                            Service Terms
+                        </li>
+                        <li>
+                            Contact Us
+                        </li>
+                    </ul>
+                </div>
+                @*<div class="footer-div">
+                    <img src="~/Images/fb.png" />
+                    <img src="~/Images/twt.png" />
+                </div>*@
+            </div>
         </footer>
     </div>
 
