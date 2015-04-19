@@ -4,21 +4,47 @@
     ViewBag.Title = "Create";
 }
 
+@section CSS{
+<link href="~/Content/registration-form.css" rel="stylesheet" />
+}
+<style>
+    .effect1{
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+}
+    #prof_form {
+        width:30%;
+        float:left;
+        left:0;
+        position:absolute;
+        background-color:#50617A;
+    }
+    #tb {
+    width: 221px;
+	color : #747862;
+	height:20px;
+	border:0;
+	padding:4px 8px;
+	margin-bottom:0px;
+    }
+</style>
 <h2>Create</h2>
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
+
+    <div class="form-horizontal effect1" id="prof_form">
         <h4>User</h4>
+        <a href=""
         <hr />
         @Html.ValidationSummary(true)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-10" id="tb">
                 @Html.EditorFor(model => model.Name)
                 @Html.ValidationMessageFor(model => model.Name)
             </div>
@@ -31,14 +57,21 @@
                 @Html.ValidationMessageFor(model => model.LastName)
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.Image, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Image)
-                @Html.ValidationMessageFor(model => model.Image)
-            </div>
+            @using (Html.BeginForm("FileUpload", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <label for="file">Upload Image:</label>
+                <input type="file" name="file" id="file" style="width: 100%;" />
+                <input type="submit" value="Upload" class="submit" />
+            }
         </div>
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.Image, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" name="Image" id="file" style="width: 100%;" />
+                    @Html.ValidationMessageFor(model => model.Image)
+                </div>
+            </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Location, new { @class = "control-label col-md-2" })
