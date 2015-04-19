@@ -47,3 +47,7 @@ bin/
 obj/
 .mdf
 .ldf
+/CodeFest.NinjaFamily.FamilyTreeApp/App_Data/UsersContext-20150418124710.mdf
+/CodeFest.NinjaFamily.FamilyTreeApp/App_Data/UsersContext-20150418124710_log.ldf
+/CodeFest.NinjaFamily.FamilyTreeApp/App_Data/aspnet-CodeFest.NinjaFamily.FamilyTreeApp-20150418111641.mdf
+/CodeFest.NinjaFamily.FamilyTreeApp/App_Data/aspnet-CodeFest.NinjaFamily.FamilyTreeApp-20150418111641_log.ldf
