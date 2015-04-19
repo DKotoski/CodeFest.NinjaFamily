@@ -5,7 +5,10 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+<<<<<<< HEAD
         [Display(Name = "User name")]
+=======
+>>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
         public string UserName { get; set; }
     }
 
@@ -31,7 +34,10 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Models
     public class LoginViewModel
     {
         [Required]
+<<<<<<< HEAD
         [Display(Name = "User name")]
+=======
+>>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
         public string UserName { get; set; }
 
         [Required]
@@ -46,7 +52,11 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Models
     public class RegisterViewModel
     {
         [Required]
+<<<<<<< HEAD
         [Display(Name = "User name")]
+=======
+        [Display(Name = "User Name")]
+>>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
         public string UserName { get; set; }
 
         [Required]

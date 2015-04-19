@@ -184,11 +184,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageUpload.cs" />
     <Compile Include="Controllers\RelationshipController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Relationship.cs" />
@@ -219,14 +221,9 @@
     <Content Include="Images\5.jpg" />
     <Content Include="Images\feature.jpg" />
     <Content Include="Images\logo.png" />
-    <Content Include="Images\logo1.png" />
-    <Content Include="Images\logo60.png" />
-    <Content Include="Images\logowhite %281%29.png" />
-    <Content Include="Images\logowhite %282%29.png" />
-    <Content Include="Images\logowhite.png" />
-    <Content Include="Images\logowhite60.png" />
     <Content Include="Images\logo_SQUARE.png" />
     <Content Include="Images\Slider\slide1.jpg" />
+    <Content Include="Images\Uploaded\back.jpg" />
     <Content Include="Scripts\animate.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -275,6 +272,16 @@
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+<<<<<<< HEAD
+=======
+    <Content Include="Views\Relationship\Create.cshtml" />
+    <Content Include="Views\Relationship\Delete.cshtml" />
+    <Content Include="Views\Relationship\Details.cshtml" />
+    <Content Include="Views\Relationship\Edit.cshtml" />
+    <Content Include="Views\Relationship\Index.cshtml" />
+    <Content Include="Views\User\_TreeView.cshtml" />
+    <Content Include="Views\User\CreateImage.cshtml" />
+>>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

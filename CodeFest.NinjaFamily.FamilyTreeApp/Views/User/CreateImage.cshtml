@@ -1,0 +1,11 @@
+﻿
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("ImageUpload", "User",
+        FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>Upload Image</div>
+    <input type="file" name="avatar" />
+    <input type="submit" value="upload" />
+}

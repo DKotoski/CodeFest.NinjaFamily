@@ -25,13 +25,22 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Controllers
         {
             if (id == null)
             {
+               
                 var currprev = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+                
                 if (currprev == null)
                 {
+                    using (var accDb = new ApplicationDbContext())
+                    {
+                        var checkRegistrated = accDb.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+                        if (checkRegistrated != null)
+                        {
+                            return Redirect("~/User/Create");
+                        }
+                    }
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
-                return View(currprev);
-                
+                return View(currprev);                
             }
             User user = db.Users.Find(id);
             if (user == null)
@@ -51,10 +60,25 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create([Bind(Include="ID,Name,LastName,Image,Location,Birth,Death")] User user)
+        public ActionResult Create([Bind(Include = "ID,Name,LastName,Image,Location,Birth,Death")] User user)
         {
             if (ModelState.IsValid)
             {
+                //if (upload != null && upload.ContentLength > 0)
+                //{
+                //    var avatar = new CodeFest.NinjaFamily.FamilyTreeApp.Models.File()
+                //    {
+                //        FileName = System.IO.Path.GetFileName(upload.FileName),
+                //        FileType = FileType.Avatar,
+                //        ContentType = upload.ContentType
+                //    };
+                //    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                //    {
+                //        avatar.Content = reader.ReadBytes(upload.ContentLength);
+                //    }
+                //    user.Image = avatar;
+                //}
+
                 user.UserName = User.Identity.Name; 
                 db.Users.Add(user);
                 var currentUserName = User.Identity.Name;
@@ -134,5 +158,61 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Controllers
             }
             base.Dispose(disposing);
         }
+<<<<<<< HEAD
+=======
+        public ActionResult ImageUpload()
+        {
+            return View();
+        }
+
+        //public ActionResult CreateImage()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult ImageUpload(FormCollection formCollection)
+        //{
+        //    foreach (string item in Request.Files)
+        //    {
+        //        HttpPostedFileBase file = Request.Files[item] as HttpPostedFileBase;
+        //        if (file.ContentLength == 0)
+        //            continue;
+        //        if (file.ContentLength > 0)
+        //        {
+        //            // width + height will force size, care for distortion
+        //            //Exmaple: ImageUpload imageUpload = new ImageUpload { Width = 800, Height = 700 };
+
+        //            // height will increase the width proportionally
+        //            //Example: ImageUpload imageUpload = new ImageUpload { Height= 600 };
+
+        //            // width will increase the height proportionally
+        //            ImageUpload imageUpload = new ImageUpload { Width = 600 };
+
+        //            // rename, resize, and upload
+        //            //return object that contains {bool Success,string ErrorMessage,string ImageName}
+        //            ImageResult imageResult = imageUpload.RenameUploadFile(file);
+        //            if (imageResult.Success)
+        //            {
+        //                //TODO: write the filename to the db
+        //                using (var accDB = new ApplicationDbContext())
+        //                {
+        //                    var curr =  accDB.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+        //                    db.Users.Find(curr.Owner).Img=imageResult.ImageName;
+        //                    db.SaveChanges();
+        //                }
+        //            }
+        //            else
+        //            {
+        //                // use imageResult.ErrorMessage to show the error
+        //                ViewBag.Error = imageResult.ErrorMessage;
+        //            }
+        //        }
+        //    }
+
+        //    return RedirectToAction("Details");
+        //}
+       
+>>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
     }
 }

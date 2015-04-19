@@ -10,6 +10,11 @@
     <h4>User</h4>
 	<hr />
     <dl class="dl-horizontal">
+        
+        
+            <dd>
+                <img src="@Model.Img" alt="avatar" width="150" height="150"/>
+            </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -24,14 +29,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image)
         </dd>
 
         <dt>
@@ -60,10 +57,7 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
 <button id="crap" >clickthis crap</button>
 
 @using (Html.BeginForm("CreateRelationship", "Relationship", new { invokerID = Model.ID, created = Model }))
@@ -99,13 +93,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Image, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Image)
-                @Html.ValidationMessageFor(model => model.Image)
-            </div>
-        </div>
+        
 
         <div class="form-group">
             @Html.LabelFor(model => model.Location, new { @class = "control-label col-md-2" })

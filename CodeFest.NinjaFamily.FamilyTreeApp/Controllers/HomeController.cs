@@ -10,6 +10,10 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Controllers
     {
         public ActionResult Index()
         {
+            if (Request.IsAuthenticated)
+            {
+                return Redirect("~/User/Details");
+            }
             return View();
         }
 

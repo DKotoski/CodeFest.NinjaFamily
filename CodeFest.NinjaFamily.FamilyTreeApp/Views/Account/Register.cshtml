@@ -1,10 +1,12 @@
 ﻿@model CodeFest.NinjaFamily.FamilyTreeApp.Models.RegisterViewModel
 @{
+    Layout = "~/Views/Shared/_LandingLayout.cshtml";
     ViewBag.Title = "Register";
 }
 
 <h2>@ViewBag.Title.</h2>
 
+<<<<<<< HEAD
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -32,9 +34,42 @@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />
+=======
+<div class="register-form">
+    <h2>Create a new account</h2>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form" }))
+    {
+
+        <fieldset class="form-fieldset ui-input __second">
+            @Html.TextBoxFor(m => m.UserName)
+            @Html.LabelFor(m => m.UserName)
+            @Html.ValidationMessageFor(m=>m.UserName)
+        </fieldset>
+
+        <fieldset class="form-fieldset ui-input __third">
+            @Html.PasswordFor(m => m.Password)
+            <label for="new-password">
+                <span data-text="New Password">New Password</span>
+            </label>
+            @Html.ValidationMessageFor(m => m.Password)
+        </fieldset>
+
+        <fieldset class="form-fieldset ui-input __fourth">
+            @Html.PasswordFor(m => m.ConfirmPassword)
+            <label for="repeat-new-password">
+                <span data-text="Repeat New Password">Repeat New Password</span>
+            </label>
+            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+        </fieldset>
+
+        <div class="form-footer">
+            <input type="submit" value="CREATE ACCOUNT" class="btn btn-default" />
+>>>>>>> 8537c775ee376a8dc1bebf094a7125da9723d34a
         </div>
-    </div>
-}
+    }
+</div>
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
