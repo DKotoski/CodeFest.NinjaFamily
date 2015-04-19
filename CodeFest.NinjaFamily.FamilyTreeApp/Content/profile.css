@@ -1,0 +1,269 @@
+﻿.effect1{
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+}
+#profile_hover {
+        position:absolute;
+        left:-100%;
+        width: 100%;
+        height: 70px;
+        display:none;
+    }
+   #profile_hover.float_div {
+        margin-left: 100%;
+    }
+
+    #profile_hover.float_div {
+        -webkit-transition: 3s;
+    }
+.tree{
+    float: left;
+    width:24%;
+    background-color:#FFFFFF;
+    margin-top:5%;
+    border-top-right-radius:25%;
+    border-bottom-right-radius:25%;
+    height:40%;
+}
+.profile{
+    float:left;
+    width:49%;
+    background-color:green;
+    margin-top:5%;
+    margin-left:1%;
+}
+
+.fadeOut_btn {
+    display:none;
+    left:0%;
+    top:20%;
+    position:absolute;
+    z-index:9;
+}
+.prof_img {
+    width:23%;
+    margin-bottom:3%;
+    float:left;
+    margin-right:3%;
+
+}
+.prof_name {
+    width:20%;
+    margin-bottom:3%;
+    float:left;
+}
+.prof_last {
+     width:40%;
+    margin-bottom:3%;
+    float:left;
+}
+.prof_locat {
+     width:40%;
+    margin-bottom:3%;
+    float:left;
+
+}
+.prof_birth {
+     width:40%;
+    margin-bottom:3%;
+    float:left;
+}
+.prof_dead {
+      width:40%;
+    margin-bottom:3%;
+    float:left;
+}
+.name_lab {
+   width:30%; 
+    margin-bottom:3%;
+    float:right;
+}
+ #news-wrapper{
+        margin-top: 5%;
+        width: 100%;
+        padding: 5%;
+        background-color: #ffffff;
+        display: inline-block;
+    }
+    #the-tree{
+        display: inline-block;
+    }
+    .photo-feed{
+        background-color:white;
+        border-radius: 10%;
+        margin-bottom: 10%;
+    }
+    #share{
+	    display: block;
+        margin-left:15%;
+    }
+    #share-status,
+    #share-picture,
+    #share-story,
+    #share-tag,
+    #location{
+	    display: inline-block;
+    }
+    #share-input{
+        width: 100%;
+    }
+    #post-input{
+        width:100%;
+        padding: 5%;
+    }
+    #share-tag button{
+        background-color:transparent;
+        border: 0px;
+        font-weight:bold;
+        color:  #899f39;
+        margin: 15%;
+    }
+   .photo-feed-photo img {
+        margin-left:0.6%;
+    } 
+    .like{
+        width: 20%;
+        height: 10%;
+        float:right;
+    }
+     .wrapper{
+        width: 45%;
+        display: none;
+        background-color:#ffffff;
+        float:right;
+    }
+.news_btn {
+    display:none;
+    right:0%;
+    top:20%;
+    position:absolute;
+    z-index:9;
+    background: #186b08;
+  background-image: -webkit-linear-gradient(top, #186b08, #11b824);
+  background-image: -moz-linear-gradient(top, #186b08, #11b824);
+  background-image: -ms-linear-gradient(top, #186b08, #11b824);
+  background-image: -o-linear-gradient(top, #186b08, #11b824);
+  background-image: linear-gradient(to bottom, #186b08, #11b824);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 3px 12px 3px 12px;
+  text-decoration: none;
+}
+    .news_btn:hover {
+        background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+    }
+.close_btn {
+    right:0%;
+    top:20%;
+    position:absolute;
+    z-index:9;
+    background: #186b08;
+  background-image: -webkit-linear-gradient(top, #186b08, #11b824);
+  background-image: -moz-linear-gradient(top, #186b08, #11b824);
+  background-image: -ms-linear-gradient(top, #186b08, #11b824);
+  background-image: -o-linear-gradient(top, #186b08, #11b824);
+  background-image: linear-gradient(to bottom, #186b08, #11b824);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 3px 12px 3px 12px;
+  text-decoration: none;
+}
+    .close_btn:hover {
+        background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+    }
+.profile_hover {
+        position:absolute;
+        right:-100%;
+        width: 100%;
+        height: 70px;
+        display:none;
+    }
+   .profile_hover.float_div {
+        margin-right: 100%;
+    }
+
+    .profile_hover.float_div {
+        -webkit-transition: 3s;
+    }
+    .fade_btn {
+    left:0%;
+    top:20%;
+    position:absolute;
+    z-index:9;
+  background: #186b08;
+  background-image: -webkit-linear-gradient(top, #186b08, #11b824);
+  background-image: -moz-linear-gradient(top, #186b08, #11b824);
+  background-image: -ms-linear-gradient(top, #186b08, #11b824);
+  background-image: -o-linear-gradient(top, #186b08, #11b824);
+  background-image: linear-gradient(to bottom, #186b08, #11b824);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 3px 12px 3px 12px;
+  text-decoration: none;
+}
+
+.fade_btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.fadeOut_btn:hover{
+    background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.fadeOut_btn {
+
+    display:none;
+    left:0%;
+    top:20%;
+    position:absolute;
+    z-index:9;
+  background: #186b08;
+  background-image: -webkit-linear-gradient(top, #186b08, #11b824);
+  background-image: -moz-linear-gradient(top, #186b08, #11b824);
+  background-image: -ms-linear-gradient(top, #186b08, #11b824);
+  background-image: -o-linear-gradient(top, #186b08, #11b824);
+  background-image: linear-gradient(to bottom, #186b08, #11b824);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 3px 12px 3px 12px;
+  text-decoration: none;
+}

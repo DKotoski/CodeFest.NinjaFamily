@@ -29,6 +29,11 @@ h1 {
   text-align: center;
 }
 
+.reg {
+    font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+      color: rgba(255, 255, 255, 1)
+}
 h2 {
   font-weight: 400;
   font-size: 24px;
@@ -169,8 +174,9 @@ h2 {
 .btn {
   border: 0;
   background-color: #50617A;
-  padding: 18px 30px 18px 30px;
-  font-size: 18px;
+  padding: 2%px 4% 2% 4%;
+  margin-left:20%;
+  font-size: 70%;
   text-transform: uppercase;
   letter-spacing: .0875em;
   font-weight: 500;

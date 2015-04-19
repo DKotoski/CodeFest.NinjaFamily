@@ -7,21 +7,16 @@
     <div id="slide-register">
         <div id="Fader" class="fader">
             <img class="slide" src="~/Images/Slider/slide1.jpg" />
-            <img class="slide" src="http://www.barrelny.com/wp-content/uploads/about-office-slide-pingpong2-800x500.jpg" />
-            <img class="slide" src="http://www.barrelny.com/wp-content/uploads/about-office-slide-bookcase-800x500.jpg" />
-            <img class="slide" src="http://www.barrelny.com/wp-content/uploads/about-office-slide-bikerack-800x500.jpg" />
-            <div class="fader_controls">
-                @*<div class="page prev" data-target="prev">&lsaquo;</div>
-                    <div class="page next" data-target="next">&rsaquo;</div>
-                    <ul class="pager_list"></ul>*@
+            <img class="slide" src="~/Images/pic4.png" />
+            <img class="slide" src="~/Images/pic3.jpg" />
             </div>
         </div>
         <div id="touch">
-            <h1>Get in touch.</h1><br />
-            <h1>Stay in touch.</h1>
+            <p style="font-size:250%;font-weight: 500; text-shadow: 2px 2px #546276;width:100%;">GET IN TOUCH.</p>
+            <p style="font-size:250%;font-weight: 500; text-shadow: 2px 2px #546276;width:100%;">STAY IN TOUCH.</p>
         </div>
         <div class="register-form">
-            <h2>Create a new account</h2>
+            <h1 class="reg">Create a new account</h1>
             @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form" }))
             {
 
@@ -51,92 +46,61 @@
                 </div>
             }
         </div>
-    </div>
+    @*</div>*@
 </section>
 <section class="features_wrapper">
 
-    <div id="animated-example" class="animated bounceInLeft">
-        <p>FIND YOUR FAMILY</p>
+    <div id="animated-example" class="animated bounceInLeft" data-wow-delay="0.5s">
+        <div id="txt">
+            <h1>BUILD YOUR FAMILY TREE</h1>
+            <h3 style="width:100%; text-align:center;">
+                Thousands of miles away, or just around the block, they are your closest. They are your family. Build your tree, grow it, and bring the closest closer!
+            </h3>
+        </div>
     </div>
-    <div id="animated-example" class="animated bounceInRight">
-        <p>GET NOTIFIED WHEN THEY ARE IN YOUR TOWN</p>
-    </div>
-    <div id="animated-example" class="animated bounceInLeft">
-        <p>HEAR THEIR STORIES</p>
-    </div>
-    <div id="animated-example" class="animated bounceInRight">
-        <p>SHARE YOUR STORY</p>
-    </div>
-    <div id="animated-example" class="animated bounceInLeft">
-        <p>ORGINIZE AND ATEND FAMILY EVENT</p>
-    </div>
-    <div id="animated-example" class="animated bounceInRight">
-        <p>GROW YOUR TREE</p>
-    </div>
+    <section class="section--purple wow slideInRight" data-wow-delay="0.5s">
+        <div id="feat" class="feat_pic">
+            <img src="~/Images/feat.png" />
+        </div>
+    </section>
+    
 
 </section>
-<div class="features_wrapper">
-    <section class="section--purple wow slideInLeft" data-wow-delay="2s">
-        <div id="animated-example" class="animated bounceInLeft">
-            <p>FIND YOUR FAMILY</p>
-        </div>
-    </section>
-    <section class="section--purple wow slideInRight" data-wow-delay="2s">
-        <div id="animated-example" class="animated bounceInRight">
-            <p>GET NOTIFIED WHEN THEY ARE IN YOUR TOWN</p>
-        </div>
-    </section>
-    <section class="section--purple wow slideInDown" data-wow-delay="0.5s">
-        <div id="feat" class="feat_pic">
-            <img src="~/Images/feature.jpg" />
-        </div>
-    </section>
-    <section class="section--purple wow slideInLeft" data-wow-delay="2s">
-        <div id="animated-example" class="animated bounceInLeft">
-            <p>HEAR THEIR STORIES</p>
-        </div>
-    </section>
-    <section class="section--purple wow slideInRight" data-wow-delay="2s">
-        <div id="animated-example" class="animated bounceInRight">
-            <p>SHARE YOUR STORY</p>
-        </div>
-    </section>
-    <section class="section--purple wow slideInLeft" data-wow-delay="2s">
-        <div id="animated-example" class="animated bounceInLeft">
-            <p>ORGINIZE AND ATEND FAMILY EVENT</p>
-        </div>
-    </section>
-    <section class="section--purple wow slideInRight" data-wow-delay="2s">
-        <div id="animated-example" class="animated bounceInRight">
-            <p>GROW YOUR TREE</p>
-        </div>
-    </section>
-</div>
 
 <div class="profile_wrapper">
-    <section class="section--blue wow bounceInLeft" data-wow-offset="300">
+    <div id="animated-example" class="animated bounceInLeft" data-wow-delay="1s">
+        <div id="txt1">
+            <h1 style="color:#ffffff;">BUILD YOUR FAMILY TREE</h1>
+            <h4 style="width:50%; font-size: 90%; margin-left:25%; text-align:center;">
+                We are young, enthusiastic people with the idea to show this world is not big enough for families not to get to connect with each other. As you and you newfound family
+                members merge your trees, you will realize that wherever you go, you are home. You have family there. We are in this together, we all share something greater.
+                We share a Family Tree!
+            </h4>
+        </div>
+    </div>
+    <section class="section--blue wow bounceInLeft" data-wow-delay="1s">
         <div id="pic1" class="pic">
-            <img src="~/Images/2.jpg" />
+            <img src="~/Images/jordan.png" />
         </div>
     </section>
-    <section class="section--blue wow bounceInRight" data-wow-offset="300">
+    <section class="section--blue wow bounceInRight" data-wow-delay="1s">
         <div id="pic2" class="pic">
-            <img src="~/Images/1.jpg" />
+            <img src="~/Images/ivana.png" />
         </div>
     </section>
-    <section class="section--blue wow bounceInLeft" data-wow-offset="300">
+    <section class="section--blue wow bounceInLeft" data-wow-delay="1s">
         <div id="pic3" class="pic">
-            <img src="~/Images/3.jpg" />
+            <img src="~/Images/kristijan.png" />
         </div>
     </section>
-    <section class="section--blue wow bounceInRight" data-wow-offset="300">
+    <section class="section--blue wow bounceInRight" data-wow-delay="1s">
         <div id="pic4" class="pic">
-            <img src="~/Images/4.jpg" />
+            <img src="~/Images/kristina.png" />
         </div>
     </section>
-    <section class="section--blue wow bounceInLeft" data-wow-offset="300">
+    <section class="section--blue wow bounceInLeft" data-wow-delay="1s">
         <div id="pic4" class="pic">
-            <img src="~/Images/5.jpg" />
+            <img src="~/Images/darko.png" />
         </div>
     </section>
 </div>
