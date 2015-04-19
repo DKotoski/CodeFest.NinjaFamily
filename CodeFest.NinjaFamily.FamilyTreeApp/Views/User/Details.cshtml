@@ -3,68 +3,67 @@
 @{
     ViewBag.Title = "Details";
 }
-
+@section CSS{ 
+    <link href="~/Content/profile.css" rel="stylesheet" />
+    }
 <h2>Details</h2>
+<button class="fade_btn">-</button>
+<button class="fadeOut_btn">+</button>
+<div class="tree effect1">
+    <div>
+       
+        <dl class="dl-horizontal">
 
-<div>
-    <h4>User</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        
-        
-            <dd>
-                <img src="@Model.Img" alt="avatar" width="150" height="150"/>
+
+            <dd class="prof_img">
+                <img src="@Model.Img" alt="avatar" width="150" height="150" />
             </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dt class="name_lab">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd class="prof_name">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+            <dt class="name_lab">
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+            <dd class="prof_last">
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
+            <dt class="name_lab">
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
+            <dd class="prof_locat">
+                @Html.DisplayFor(model => model.Location)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Birth)
-        </dt>
+            <dt class="name_lab">
+                @Html.DisplayNameFor(model => model.Birth)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Birth)
-        </dd>
+            <dd class="prof_birth">
+                @Html.DisplayFor(model => model.Birth)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Death)
-        </dt>
+            @*<dt class="name_lab">
+                @Html.DisplayNameFor(model => model.Death)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Death)
-        </dd>
+            <dd class="prof_dead">
+                @Html.DisplayFor(model => model.Death)
+            </dd>*@
 
-    </dl>
-</div>
-
-<button id="crap" >clickthis crap</button>
-
-@using (Html.BeginForm("CreateRelationship", "Relationship", new { invokerID = Model.ID, created = Model }))
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal hidden">
+        </dl>
+    </div>
+    <div id="profile_hover"></div>
+   
+    @using (Html.BeginForm("CreateRelationship", "Relationship", new { invokerID = Model.ID, created = Model }))
+    { @Html.AntiForgeryToken()   <div class="form-horizontal hidden">
         <h4>User</h4>
         <hr />
         @Html.ValidationSummary(true)
@@ -93,7 +92,7 @@
             </div>
         </div>
 
-        
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.Location, new { @class = "control-label col-md-2" })
@@ -125,12 +124,123 @@
             </div>
         </div>
     </div>
-}
+    }
+</div>
+<div class="profile">something</div>
+<button class="news_btn">news</button>
+<button class="close_btn">news</button>
+<div class="wrapper effect1">
+    <div id="news-wrapper">
+        <div id="share">
+            <div id="share-input">
+                <input id="post-input" type="text" placeholder="Tell your family what's on your mind"></input>
+            </div>
+            <div id="share-tag">
+                <div id="share-status">
+                    <button id="post-status">Post</button>
+                </div>
+                <div id="share-picture">
+                    <button id="post-picture">Gallery</button>
+                </div>
+                <div id="location">
+                    <button id="share-location">Location</button>
+                </div>
+                <div id="share-story">
+                    <button id="tell-story">Story</button>
+                </div>
+            </div>
+        </div>
 
+        <p style="font-weight:bold; font-size:18px; padding:5%; ">Family Feed</p>
+        <div id="news-feed">
+            <div class="photo-feed">
+                <div class="photo-feed-header">
+                    <img style="float:left;" src="~/Images/icon.png" />
+                    <p style="float:left; margin-left:2%; padding: 2%; font-size:14px;">It's #love & #smile</p>
+                </div>
+                <div class="photo-feed-photo">
+                    <img style="border-radius:10%;" src="~/Images/rottweiler.png" />
+                </div>
+                <div class="photo-feed-footer">
+                    <button class="like">Comment</button>
+                    <button class="like">Favorite</button>
+                </div>
+            </div>
+            <div class="photo-feed">
+                <div class="photo-feed-header">
+                    <img style="float:left;" src="~/Images/kristina icon.png" />
+                    <p style="float:left; margin-left:2%; padding: 2%; font-size:14px;">Smile:) It's a beautiful day</p>
+                </div>
+                <div class="photo-feed-photo">
+                    <img style="border-radius:10%;" src="~/Images/kid.png" />
+                </div>
+                <div class="photo-feed-footer">
+                    <button class="like">Comment</button>
+                    <button class="like">Favorite</button>
+                </div>
+            </div>
+            <div class="photo-feed">
+                <div class="photo-feed-header">
+                    <img style="float:left;" src="~/Images/joco icon.png" />
+                    <p style="float:left; margin-left:2%; padding: 2%; font-size:14px;">Neko mi je ukrao biciklu! </p>
+                </div>
+                <div class="photo-feed-photo">
+                    <img style="border-radius:10%;" src="~/Images/bike.png" />
+                </div>
+                <div class="photo-feed-footer">
+                    <button class="like">Comment</button>
+                    <button class="like">Favorite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="the-tree">
+</div>
 @section Scripts{
 <script>
-    jQuery("#crap").on("click", function () {
-        jQuery(".hidden").removeClass("hidden");
+    $('.fade_btn').on('click', function () {
+        $(this).toggleClass('clicked');
+        if ($("#profile_hover").css("display") == "none") {
+            $("#profile_hover").css("display", "inline-block");
+            $("#profile_hover").toggleClass('float_div');
+        }
+        else {
+            $("#profile_hover").css("display", "inline-block");
+        }
     });
-</script>
+        $('.fade_btn').on('click', function () {
+            $('.tree').toggle('slow');
+            $('.fade_btn').css("display", "none");
+            $('.fadeOut_btn').css("display", "block");
+        });
+        $('.fadeOut_btn').on('click', function () {
+            $('.tree').toggle('slow');
+            $('.fadeOut_btn').css("display", "block");
+            $('.fade_btn').css("display", "none");
+        });
+    $('.news_btn').on('click', function () {
+        $(this).toggleClass('clicked');
+        if ($(".profile_hover").css("display") == "none") {
+            $(".profile_hover").css("display", "inline-block");
+            $(".profile_hover").toggleClass('float_div');
+        }
+        else {
+            $(".profile_hover").css("display", "inline-block");
+        }
+    });
+        $('.news_btn').on('click', function () {
+            $('.wrapper').toggle('slow');
+            $('.news_btn').css("display", "block");
+            $('.close_btn').css("display", "none");
+        });
+        $('.close_btn').on('click', function () {
+            $('.wrapper').toggle('slow');
+            $('.close_btn').css("display", "block");
+            $('.news_btn').css("display", "none");
+        });
+        if ($('.profile_hover').css('display', 'block')) {
+            $('#profile_hover').css("display", "none");
+        }
+    </script>
 }

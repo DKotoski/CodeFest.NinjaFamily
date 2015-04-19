@@ -59,6 +59,7 @@ html {
 
 body {
   margin: 0;
+  background-color:#d8d9d9;
 }
 
 a:focus {
@@ -315,7 +316,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
+    background-color:#d8d9d9;
 }
 
 input,
@@ -614,12 +615,12 @@ dd {
     width: 160px;
     overflow: hidden;
     clear: left;
-    text-align: right;
+    text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
   .dl-horizontal dd {
-    margin-left: 180px;
+    margin-left: 20px;
   }
   .dl-horizontal dd:before,
   .dl-horizontal dd:after {
