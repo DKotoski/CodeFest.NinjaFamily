@@ -11,7 +11,7 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+       @using (Html.BeginForm("Create", "User", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     
@@ -19,7 +19,8 @@
         <h4>User</h4>
         <hr />
         @Html.ValidationSummary(true)
-
+       
+        </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -35,14 +36,7 @@
                 @Html.ValidationMessageFor(model => model.LastName)
             </div>
         </div>
-        <div class="form-group">
-           @using (Html.BeginForm("FileUpload", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        { 
-            <label for="file">Upload Image:</label>
-            <input type="file" name="file" id="file" style="width: 100%;" />
-            <input type="submit" value="Upload" class="submit" />
-        }
-       </div>
+        
         @*<div class="form-group">
             @Html.LabelFor(model => model.Image, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -77,11 +71,19 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input id="first" type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
-    </div>
 }
+<div class="row hidden" id="secondform">
+    <div class="col-md-12">
+        <h2>Rename, Resize, and Upload Image</h2>
+        @if (ViewBag.Error != null)
+        {
+            <h4 style="color:red">@ViewBag.Error</h4>
+        }
+    </div>
+</div>
 
 <div>
     @Html.ActionLink("Back to List", "Index")
@@ -89,4 +91,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
 }

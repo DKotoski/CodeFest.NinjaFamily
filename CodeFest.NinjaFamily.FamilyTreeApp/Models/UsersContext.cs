@@ -17,11 +17,13 @@ namespace CodeFest.NinjaFamily.FamilyTreeApp.Models
     
         public UsersContext() : base("name=UsersContext")
         {
+            Database.SetInitializer<UsersContext>(new CreateDatabaseIfNotExists<UsersContext>());
         }
 
         public System.Data.Entity.DbSet<CodeFest.NinjaFamily.FamilyTreeApp.Models.User> Users { get; set; }
 
         public System.Data.Entity.DbSet<CodeFest.NinjaFamily.FamilyTreeApp.Models.Relationship> Relationships { get; set; }
-    
+
+        
     }
 }
