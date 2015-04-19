@@ -125,11 +125,10 @@
 }
 
 .login {
-    position:absolute;
-    left: 90%;
-    top: 60%;
-    color: rgba(255, 255, 255, 1);
-
+    position: absolute;
+  left: 82%;
+  top: 20%;
+  color: black;
 }
 
 .login a{

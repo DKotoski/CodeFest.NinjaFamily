@@ -8,7 +8,7 @@
     });
 
     $('.chat-close').on('click', function (e) {
-
+        console.log("vetuvam ke se zatvoram");
         e.preventDefault();
         $('#live-chat').fadeOut(300);
 
